@@ -1,52 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
+<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Sarah Tran</title>
-
+<!--Stylesheets-->
 		<link rel="shortcut icon" href="images/logo.svg">
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
-		<script>
-
-			document.documentElement.className = 'js';
-			var supportsCssVars = function() {
-				var s = document.createElement('style'),
-				support;
-
-				s.innerHTML = "root: { --tmp-var: bold; }";
-				document.head.appendChild(s);
-				support = !!(window.CSS && window.CSS.supports && window.CSS.supports('font-weight', 'var(--tmp-var)'));
-				s.parentNode.removeChild(s);
-				return support;
-			}
-			if (!supportsCssVars()) alert('Please view this demo in a modern browser that supports CSS Variables.')
-		</script>
-	</head>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+</head>
 	
-		<main>
 
-
-
-
-<!-- Start Nav Section -->
+<!-- Navigation -->
 <div class = "navbar">
     <nav>
-        <div class="hamburger" id=nav-menu>
+          <div class="hamburger" id=nav-menu>
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
-        </div>
-        <div class="logo">
+          </div>
+		
+		  <div class="logo"></div>
 
-				
-
-        </div>
         <ul class="nav-links" id=#nav>
         <li><a href="#home">Home</a></li>
 		  <li><a href="#about">About</a></li>
@@ -54,71 +33,96 @@
 		  <li><a href="#projects">Projects</a></li>
 		  <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
+    </nav>
     
     </div>
-  <!-- End Nav Section -->
-        
-        </div>
-			<div class="morph-wrap">
-				<svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
-					<path d="M 262.9,252.2 C 210.1,338.2 212.6,487.6 288.8,553.9 372.2,626.5 511.2,517.8 620.3,536.3 750.6,558.4 860.3,723 987.3,686.5 1089,657.3 1168,534.7 1173,429.2 1178,313.7 1096,189.1 995.1,130.7 852.1,47.07 658.8,78.95 498.1,119.2 410.7,141.1 322.6,154.8 262.9,252.2 Z"/>
-				</svg>
-			</div>
-			<div class="content content--fixed">
+  <!-- Morphing Background -->
+<div class="morph-wrap">
+	<svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
+	<path d="M 262.9,252.2 C 210.1,338.2 212.6,487.6 288.8,553.9 372.2,626.5 511.2,517.8 620.3,536.3 750.6,558.4 860.3,723 987.3,686.5 1089,657.3 1168,534.7 1173,429.2 1178,313.7 1096,189.1 995.1,130.7 852.1,47.07 658.8,78.95 498.1,119.2 410.7,141.1 322.6,154.8 262.9,252.2 Z"/>
+	</svg>
+</div>
 
-				</a>
-				<div class="deco deco--title">SARAH TRAN</div>
-			</div>
-			<div class="content-wrap">
+<!--Side Title-->
+<div class="content content--fixed">
+	<div class="deco deco--title">SARAH TRAN</div>
+</div></div>
+
+<!-- Home -->
+<div class="content-wrap">
+	<div class="scroll-indicator" id="home" data-scroll-indicator-title="Home"></div>
+	<div class="content content--layout content--layout-1" id="home">
+	<img class="content__img" src="Images/hero-image.png" alt="Some image" />
+	<h3 class="content__title">Sarah Tran</h3>
+	<p class="content__desc">I am a 
+    <span class="wrap"><a href="" class="typewrite" data-period="2000" data-type='[ "web designer.", "web developer.", "UX/UI designer.", "digital marketer." ]'>
+    <span class="wrap"></span>
+    </a></p>
+	<div class="btn">
+    <a href="#about"><span>About Me</span></a></div>
+    </div>
+	</div>
+    </div>
+
+<!--About-->
+
+<div>
+	<div class="scroll-indicator" id="about" data-scroll-indicator-title="About"></div>
+  </div>
+  <div>
+
+	<div class="content-wrap">
+		<div class="content content--layout content--layout-2" id="about">
+			<img class="content__img" src="Images/about-image.svg" alt="Some image" />
+			<h3 class="content__title">About</h3>
+			<p class="content__author"></p>
+			<p class="content__desc">I am from <highlight>Melbourne, Australia</highlight> and I am studying a Bachelors of Commerce and Information Technology at Monash University. I am majoring in <highlight>marketing</highlight> and <highlight>software development.</highlight></p>
+			<a href="#" class="content__link"></a>
+		</div>
+	</div></div>
+
+
+	<!--Skills-->
+
+	<div>
+		<div class="scroll-indicator" id="skills" data-scroll-indicator-title="Skills"></div>
+	  </div>
+	  <div>
+
+	<div class="content-wrap">		
+		<div class="content content--layout content--layout-3">
+			<h3 class="content__title">Skills</h3>
+			<p class="content__desc">
+				<ul><b>Development</b>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+					<li>Wordpress</li>
+				  </ul>
+
+				  <ul><b>Design</b>
+					<li>Figma</li>
+					<li>Adobe XD/Photoshop/InDesign/Illustrator</li>
+					<li>Wireframing & Prototyping</li>
+				  </ul>
+			</p>
+		</div>
+	</div>
 
 
 
+  </div>
 
-				<div class="scroll-indicator" id="home" data-scroll-indicator-title="Home"></div>
-				<div class="content content--layout content--layout-1" id="home">
-					<img class="content__img" src="images/hero-image.png" alt="Some image" />
-					<h3 class="content__title">Sarah Tran</h3>
-					<p class="content__author"></p>
-					<p class="content__desc">I am a 
-                        <span class="wrap"><a href="" class="typewrite" data-period="2000" data-type='[ "web designer.", "web developer.", "UX/UI designer.", "digital marketer." ]'>
-                          <span class="wrap"></span>
-                        </a></p>
-					<div class="btn">
-                        <a href="#about"><span>About Me</span></a>       </div>
-                      </div>
-				</div>
-			</div>
-			<div class="content-wrap"><div class="scroll-indicator" id="about" data-scroll-indicator-title="About">
-				<div class="content content--layout content--layout-2" id="about">
-					<img class="content__img" src="images/about-image.svg" alt="Some image" />
-					<h3 class="content__title">About</h3>
-					<p class="content__author"></p>
-					<p class="content__desc">I am from <highlight>Melbourne, Australia</highlight> and I am studying a Bachelors of Commerce and Information Technology at Monash University. I am majoring in <highlight>marketing</highlight> and <highlight>software development.</highlight></p>
-					<a href="#" class="content__link"></a>
-				</div>
-			</div></div>
-			<div class="content-wrap"> <div class="scroll-indicator" id="skills" data-scroll-indicator-title="Skills"></div>
-                    
-				<div class="content content--layout content--layout-3">
-					<h3 class="content__title">Skills</h3>
-					<p class="content__desc">
-                        <ul><b>Development</b>
-                            <li>HTML</li>
-                            <li>CSS</li>
-							<li>JavaScript</li>
-							<li>Wordpress</li>
-                          </ul>
 
-                          <ul><b>Design</b>
-                            <li>Figma</li>
-                            <li>Adobe XD/Photoshop/InDesign/Illustrator</li>
-                            <li>Wireframing & Prototyping</li>
-                          </ul>
-                    </p>
-				</div>
-			</div>
-			<div class="content-wrap"><div class="scroll-indicator" data-scroll-indicator-title="Projects" id="projects">
+<!--Projects-->
+
+<div>
+	<div class="scroll-indicator" id="projects" data-scroll-indicator-title="Projects"></div>
+  </div>
+  <div>
+
+		
+	<div class="content-wrap">
 				<div class="content content--layout content--layout-4" id="projects">
 					<h3 class="content__title">Projects</h3>
 					<p class="content__desc">
@@ -166,8 +170,16 @@
                         </p>
 				</div>
 			</div>
+
+<!--Contact-->
+
+<div>
+	<div class="scroll-indicator" id="contact" data-scroll-indicator-title="Contact"></div>
+  </div>
+  <div>
+
 			<div class="content-wrap">
-				<div class="content content--layout content--layout-1" ><div class="scroll-indicator" data-scroll-indicator-title="Contact" id="contact" ></div>
+				<div class="content content--layout content--layout-1" ><div id="contact" ></div>
 					<h3 class="content__title">Contact</h3>
 					<p class="content__author"></p>
 					<p class="content__desc">
@@ -186,7 +198,7 @@
 						</label>
 						<label>
 						  Message:
-						  <textarea class="autoExpand" rows='3' data-min-rows='3' name="message"></textarea>
+						  <textarea class="autoExpand rows='3' data-min-rows='3' name="message"></textarea>
 						</label>
 					  
 						<!-- your other form fields go here -->
@@ -222,14 +234,13 @@
 		</main>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <script src="dot-nav-master/dot-nav-min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.4/scrollMonitor.js"></script>
 		<script type="text/javascript" src="easyScrollDots.min.js"></script>
 		<script src="app.js"></script>
 
 		<script>
 easyScrollDots({
-  'fixedNav': false,
+  'fixedNav': true,
   'fixedNavId': '',
   'fixedNavUpward': false,
   'offset': 0
