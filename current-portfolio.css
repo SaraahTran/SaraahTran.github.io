@@ -1,0 +1,476 @@
+
+* {
+  box-sizing: border-box;
+
+}
+
+body{
+  font-family: 'Gilroy', sans-serif;
+}
+
+body, html{
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+
+/*Highlight*/
+
+
+table highlight tr:hover td{
+    text-decoration: none;
+    background-position-y: -0%;
+    background-image: linear-gradient( transparent 40%, red 10%);
+    transition: background 500ms ease;
+    background-size: 1px;
+    background-size: auto 185%;
+  }
+  
+
+  highlight:hover {
+    background-position-y: 100%;
+  
+  }
+
+
+
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 9vh;
+  justify-content: center;
+  
+}
+
+.thumbnail{
+  height: 400px;
+  width: auto;
+  border-radius: 20px;
+
+}
+
+@media screen and (max-width: 800px) {
+
+.thumbnail{
+  height: 300px;
+  
+}
+  }
+  
+  @media screen and (max-width: 500px) {
+
+    .thumbnail{
+      height: 150px;
+      
+    }
+      }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: -10;
+  background-color: var(--contrast-color);
+}
+
+
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+
+.navbar{
+  position: relative;
+  z-index: 15;
+  bottom: 70px;
+
+}
+
+.title{
+
+  text-align: center;
+  float: center;
+  top: 10px;
+  position: relative;
+
+  margin: 0;
+  width: 100%;
+  
+
+  font-size: 30px;
+}
+
+h1{
+  font-family: 'Amatic SC', sans-serif;
+
+
+}
+
+
+.shape {
+  bottom: 100px;
+  position: relative;
+ 	background: #e6e0ee;
+  animation: morph 8s ease-in-out infinite;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  height: 500px;
+  transition: all 1s ease-in-out;
+  width: 1200px;
+
+}
+
+
+
+@keyframes morph {
+  0% {
+			border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+	} 
+	
+	50% {
+			border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
+	}
+  
+	100% {
+		border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
+	} 
+}
+
+/*Desc Table*/
+
+table { 
+	width: 80% !important;
+  border-collapse: collapse; 
+  position: relative;
+  float: center;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background-color: white;
+  z-index: 5;
+  bottom: 50px;
+  table-layout: fixed;
+
+
+	}
+
+
+
+td, th { 
+	padding: 40px; 
+	text-align: left; 
+  font-size: 18px;
+
+  }
+
+  tr {
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+  .links{
+   float: center;
+   position: relative;
+   margin: 0 auto;
+
+  }
+
+  .links li{
+    display:inline-block;
+  }
+
+  span{
+    padding-left: 10px;
+    font-size: 15px;
+    position: relative;
+
+  }
+
+  .links li a:hover{
+    color:black
+  }
+
+
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+  list-style-type: none;
+  font-size: 2rem;
+}
+
+ul li {
+  padding: 1rem;
+}
+
+/*Gallery*/
+
+.images{
+  width: 80% !important;
+  border-collapse: collapse; 
+  position: relative;
+  float: center;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background-color: white;
+  z-index: 5;
+  bottom: 50px;
+  table-layout: fixed;
+
+}
+
+
+.responsive-image {
+  max-width: 100%;
+}
+.cell img {
+  display: block;
+}
+@media screen and (min-width: 600px){
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .cell {
+    width:50%;
+  }
+}
+@media screen and (min-width: 1000px){
+  .cell {
+    width:calc (100%/3);
+  }
+}
+.cell {
+  margin: 1rem;
+}
+
+@media screen and (min-width: 600px){
+  .cell {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 1000px){
+  .cell{
+    width: calc(33.3333% - 2rem);
+  }
+}
+
+
+/* transition for social icon hover animation */
+.fa-images,
+.fa-github,
+.fa-link
+{
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+/* social media icons hover color */
+.fa-images:hover,
+.fa-images:focus {
+  color: #1877f2;
+  transform: scale(1.1);
+}
+
+.fa-link:hover,
+.fa-link:focus {
+  color: #1da1f2;
+  transform: scale(1.1);
+}
+
+
+
+.fa-github:hover,
+.fa-github:focus {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.wrapper{
+  display: flex;
+
+}
+
+.circle{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.circle:nth-child(1){
+  background: #e6e0ee;
+}
+
+.circle:nth-child(2){
+  background: #FEE8F1;
+}
+
+.circle:nth-child(3){
+  background: #ccdbec;
+}
+
+.circle:nth-child(4){
+  background:#cff0cc;
+}
+
+.circle:nth-child(5){
+  background: #fefec8;
+}
+
+
+h2{
+font-family: "Amatic SC", sans-serif;
+}
+
+.amatic{
+font-size: 19px;
+letter-spacing: 2px;
+}
+
+.gilroy{
+  font-size: 14px;
+  letter-spacing: 2px;
+  bottom: 25px;
+  position: relative;
+  }
+
+@media screen and (max-width: 900px) {
+
+
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background: #555767;
+  margin: 5px;
+  z-index: 25;
+  }
+  nav {
+  position: relative;
+  z-index: 25;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    left: 5%;
+    top: 50%;
+  z-index: 25;
+  }
+
+  .nav-links {
+    background: linear-gradient(#BDC2E8, #E6DEE9);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 1s ease-out;
+  pointer-events: none;
+
+  }
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+  pointer-events: all;
+
+  }
+  .landing {
+    flex-direction: column;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .nav-links li a {
+    font-size: 25px;
+  }
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+
+  .logo{
+      display: none;
+  }
+}
+
+
+
+
+@media screen and (max-width: 50em) {
+	.table {
+		height: auto;
+		min-height: 0;
+		display: block;
+		position: absolute;
+	}
+	}
+
+
+@media screen and (max-width: 32em) {
+	.table, .title, .thumbnail {
+    transform: scale3d(0.9,0.9,1);
+  }
+  
+  td,th{
+    font-size: 12px;
+  }
+
+  .gilroy{
+    font-size: 10px;
+  }
+
+}
+
+
