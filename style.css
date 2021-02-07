@@ -25,6 +25,83 @@ body {
 }
 
 /*Loading*/
+
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--background-color);
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 10000;
+	top: calc(50% - 30px);
+	left: calc(50% - 30px);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 10px solid var(--background-color-2);
+	border-left-color: var(--text-color);
+	animation: loaderAnim 0.8s linear infinite forwards;
+}
+
+@keyframes loaderAnim {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+main {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: var(--link-color);
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: var(--link-hover-color);
+	outline: none;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+/* Icons */
+.icon {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+/* Deco Shape */
+.decoshape {
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	fill: var(--background-color-3);
+}
+
   
   
   #loading-wrapper {
