@@ -389,7 +389,65 @@
 	init();
 };
 
+//Type
 
+var TxtType = function(el, toRotate, period) {
+	this.toRotate = toRotate;
+	this.el = el;
+	this.loopNum = 0;
+	this.period = parseInt(period, 10) || 2000;
+	this.txt = '';
+	this.tick();
+	this.isDeleting = false;
+  };
+  
+  TxtType.prototype.tick = function() {
+	var i = this.loopNum % this.toRotate.length;
+	var fullTxt = this.toRotate[i];
+  
+	if (this.isDeleting) {
+	this.txt = fullTxt.substring(0, this.txt.length - 1);
+	} else {
+	this.txt = fullTxt.substring(0, this.txt.length + 1);
+	}
+  
+	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  
+	var that = this;
+	var delta = 200 - Math.random() * 100;
+  
+	if (this.isDeleting) { delta /= 2; }
+  
+	if (!this.isDeleting && this.txt === fullTxt) {
+	delta = this.period;
+	this.isDeleting = true;
+	} else if (this.isDeleting && this.txt === '') {
+	this.isDeleting = false;
+	this.loopNum++;
+	delta = 500;
+	}
+  
+	setTimeout(function() {
+	that.tick();
+	}, delta);
+  };
+  
+  window.onload = function() {
+	var elements = document.getElementsByClassName('typewrite');
+	for (var i=0; i<elements.length; i++) {
+		var toRotate = elements[i].getAttribute('data-type');
+		var period = elements[i].getAttribute('data-period');
+		if (toRotate) {
+		  new TxtType(elements[i], JSON.parse(toRotate), period);
+		}
+	}
+	// INJECT CSS
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+	document.body.appendChild(css);
+  };
+  
 
 
 //Nav
@@ -450,179 +508,3 @@ rotate: 320,
 toggle = !toggle
 });
 
-
-var TxtType = function(el, toRotate, period) {
-	this.toRotate = toRotate;
-	this.el = el;
-	this.loopNum = 0;
-	this.period = parseInt(period, 10) || 2000;
-	this.txt = '';
-	this.tick();
-	this.isDeleting = false;
-  };
-  
-  TxtType.prototype.tick = function() {
-	var i = this.loopNum % this.toRotate.length;
-	var fullTxt = this.toRotate[i];
-  
-	if (this.isDeleting) {
-	this.txt = fullTxt.substring(0, this.txt.length - 1);
-	} else {
-	this.txt = fullTxt.substring(0, this.txt.length + 1);
-	}
-  
-	this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-  
-	var that = this;
-	var delta = 200 - Math.random() * 100;
-  
-	if (this.isDeleting) { delta /= 2; }
-  
-	if (!this.isDeleting && this.txt === fullTxt) {
-	delta = this.period;
-	this.isDeleting = true;
-	} else if (this.isDeleting && this.txt === '') {
-	this.isDeleting = false;
-	this.loopNum++;
-	delta = 500;
-	}
-  
-	setTimeout(function() {
-	that.tick();
-	}, delta);
-  };
-  
-  window.onload = function() {
-	var elements = document.getElementsByClassName('typewrite');
-	for (var i=0; i<elements.length; i++) {
-		var toRotate = elements[i].getAttribute('data-type');
-		var period = elements[i].getAttribute('data-period');
-		if (toRotate) {
-		  new TxtType(elements[i], JSON.parse(toRotate), period);
-		}
-	}
-	// INJECT CSS
-	var css = document.createElement("style");
-	css.type = "text/css";
-	css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-	document.body.appendChild(css);
-  };
-  
-  
-  
-
-
-  const darkModeSwitch = document.getElementById('darkModeSwitch');
-const body = document.getElementById('body');
-
-
-
-
-
-//Text
-
-function getScrollHeight(elm){
-	var savedValue = elm.value
-	elm.value = ''
-	elm._baseScrollHeight = elm.scrollHeight
-	elm.value = savedValue
-  }
-  
-  function onExpandableTextareaInput({ target:elm }){
-	// make sure the input event originated from a textarea and it's desired to be auto-expandable
-	if( !elm.classList.contains('autoExpand') || !elm.nodeName == 'TEXTAREA' ) return
-	
-	var minRows = elm.getAttribute('data-min-rows')|0, rows;
-	!elm._baseScrollHeight && getScrollHeight(elm)
-  
-	elm.rows = minRows
-	rows = Math.ceil((elm.scrollHeight - elm._baseScrollHeight) / 16)
-	elm.rows = minRows + rows
-  }
-  
-  
-  // global delegated event listener
-  document.addEventListener('input', onExpandableTextareaInput)
-  
-  
-  
-  
-  // OLD SOLUTION USING JQUERY:
-  // // Applied globally on all textareas with the "autoExpand" class
-  
-  // $(document)
-  //     .one('focus.autoExpand', 'textarea.autoExpand', function(){
-  //         var savedValue = this.value;
-  //         this.value = '';
-  //         this._baseScrollHeight = this.scrollHeight;
-  //         this.value = savedValue;
-  //     })
-  //     .on('input.autoExpand', 'textarea.autoExpand', function(){
-  //         var minRows = this.getAttribute('data-min-rows')|0, rows;
-  //         this.rows = minRows;
-  //         rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 16);
-  //         this.rows = minRows + rows;
-  //     });
-
-
-
-var TxtType = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-  this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-  this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-  var that = this;
-  var delta = 200 - Math.random() * 100;
-
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-  delta = this.period;
-  this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-  this.isDeleting = false;
-  this.loopNum++;
-  delta = 500;
-  }
-
-  setTimeout(function() {
-  that.tick();
-  }, delta);
-};
-
-window.onload = function() {
-  var elements = document.getElementsByClassName('typewrite');
-  for (var i=0; i<elements.length; i++) {
-      var toRotate = elements[i].getAttribute('data-type');
-      var period = elements[i].getAttribute('data-period');
-      if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
-      }
-  }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-  document.body.appendChild(css);
-};
-
-
-
-  
